@@ -1,0 +1,321 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.button.ghost {
+  background: transparent;
+  border-color: white;
+}
+
+.button {
+  margin: 10px 0;
+  padding: 12px 45px;
+  color: whitesmoke;
+  font-weight: bold;
+  border: 1px solid #ff4b2b;
+  letter-spacing: 3px;
+  background: #ff4b2b;
+  border-radius: 20px;
+  -webkit-transition: -webkit-transform 80ms ease-in;
+  transition: -webkit-transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
+}
+
+.button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.button:focus {
+  outline: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #f6f5f7;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  top: 12vh;
+  width: 700px;
+  height: 600px;
+  background: white;
+}
+
+.container.clicked .form-container {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.container.clicked .form-container .signUp, .container.clicked .form-container .signIn {
+  z-index: -1;
+  opacity: 0;
+}
+
+.container.clicked .form-container .signIn {
+  z-index: 1;
+  opacity: 1;
+}
+
+.container.clicked .overlay {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.container.clicked .overlay-contents .panel-signUp {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.container.clicked .overlay-contents .panel-signIn {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.container .form-container {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  position: absolute;
+}
+
+.container .form-container .signUp, .container .form-container .signIn {
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+  height: 100%;
+  width: 100%;
+}
+
+.container .form-container .signUp .content, .container .form-container .signIn .content {
+  height: 100%;
+  padding-top: 10vh;
+}
+
+.container .form-container .signUp .content .social, .container .form-container .signIn .content .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 7px 0;
+}
+
+.container .form-container .signUp .content .social span, .container .form-container .signIn .content .social span {
+  font-size: 16px;
+  height: 30px;
+  width: 40px;
+}
+
+.container .form-container .signUp .content .social span i, .container .form-container .signIn .content .social span i {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 5px;
+}
+
+.container .form-container .signUp .content form, .container .form-container .signIn .content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.container .form-container .signUp .content form input, .container .form-container .signIn .content form input {
+  width: 80%;
+  padding: 12px 0 12px 4px;
+  margin: 10px 0 10px 0;
+  border: none;
+  background: whitesmoke;
+}
+
+.container .form-container .signIn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+}
+
+.container .overlay {
+  background: #fda5b4;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.container .overlay-contents {
+  height: 100%;
+  margin-top: 50%;
+}
+
+.container .overlay-contents .panel-signIn {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.container .overlay-contents .panel-signUp {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  position: absolute;
+  bottom: 48%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+@media (max-width: 600px) {
+  .container {
+    top: 0;
+    width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    height: 100%;
+  }
+  .container.clicked .form-container {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  .container.clicked .overlay {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .container.clicked .overlay-contents .panel-signUp {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .container.clicked .overlay-contents .panel-signIn {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  .container .form-container {
+    width: 100%;
+    height: 50%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .container .form-container .signUp .content, .container .form-container .signIn .content {
+    padding: 20px;
+  }
+  .container .form-container .signUp .content .social, .container .form-container .signIn .content .social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+  }
+  .container .form-container .signUp .content .social span, .container .form-container .signIn .content .social span {
+    font-size: 12px;
+    height: 20px;
+    width: 40px;
+  }
+  .container .form-container .signUp .content .social span i, .container .form-container .signIn .content .social span i {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 3px 3px;
+  }
+  .container .form-container .signUp .content form input, .container .form-container .signIn .content form input {
+    padding: 8px 0 8px 4px;
+    margin: 6px 0 6px 0;
+  }
+  .container .overlay {
+    width: 100%;
+    height: 50vh;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  .container .overlay-contents {
+    height: 100%;
+    margin-top: 20%;
+  }
+  .container .overlay-contents .panel-signIn {
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .container .overlay-contents .panel-signUp {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    bottom: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
